@@ -1,0 +1,94 @@
+﻿@model WallPostByTechBrij.Models.UserProfile
+
+
+
+<div class="float-left">
+    <img src="@Url.Action("GetImage", "UserProfile", new {id = Model.UserId})" width="250" />
+
+</div>
+
+
+<div class="float-right" style="background-color: blanchedalmond;width: 550px">
+    <fieldset>
+        <legend>UserProfile</legend>
+
+        <div class="display-label">
+            <p> Name:@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</p>
+        </div>
+        <div class="display-label">
+            <p>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</p>
+        </div>
+        <div class="display-label">
+            <p>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</p>
+        </div>
+        <div class="display-label">
+            <p>@Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)</p>
+        </div>
+        <div class="display-label">
+            <p>About Me: @Html.DisplayFor(model => model.AboutMe)</p>
+        </div>
+
+    </fieldset>
+    <br />
+</div>
+
+
+
+
+
+@*<fieldset>
+        <legend>UserProfile</legend>
+
+
+
+        <div class="display-label">
+            <p> User Name: @Html.DisplayFor(model => model.UserName)</p>
+        </div>
+
+        <br />
+        <div class="display-label">
+            <p> Name:@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</p>
+        </div>
+
+        <br />
+        <div class="display-label">
+            <p>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</p>
+        </div>
+
+    </fieldset>
+
+    <p>
+        @Html.ActionLink("Update Profile", "Create","UserProfile")
+    </p>*@
+
+
+
+
+@*<h3>Share something</h3>
+    <hr />
+
+    <form class="form-horizontal" role="form" name="AddPostForm" novalidate>
+        <textarea style="float: none" placeholder="What's on your mind?" class="form-control col-lg-9" ng-model="post" name="Message" id="Message" ng-required="true"></textarea>
+        <br />
+        <div><input type="submit" class="btn btn-success" value="Share Post" ng-click="addPost=post" /></div>
+
+    </form>
+    <br />
+    <label>{{name}}</label>
+    <input type="number" data-ng-model="firstNumber" />
+    <input type="number" data-ng-model="seccondNumber" />
+    <button type="button" data-ng-click="add()">Add</button>
+    <span>{{sum}}</span>*@
+
+@*<form>
+        <input type="file" name="avatar" onchange="uploadAvatar()" />
+    </form>
+
+    @section Scripts {
+
+
+        <script src="~/App/Scripts/App.js"></script>
+
+    <script src="~/App/Scripts/FriendProfileCtrl.js"></script>
+
+    }*@

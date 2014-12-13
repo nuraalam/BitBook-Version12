@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBWallPostByTechBrijModelStoreContainer" CdmEntityContainer="WallEntities">
+    <EntitySetMapping Name="PostComments">
+      <EntityTypeMapping TypeName="DBWallPostByTechBrijModel.PostComment">
+        <MappingFragment StoreEntitySet="PostComments">
+          <ScalarProperty Name="CommentedDate" ColumnName="CommentedDate" />
+          <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="DBWallPostByTechBrijModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="LikeCount" ColumnName="LikeCount" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="PostedBy" ColumnName="PostedBy" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="DBWallPostByTechBrijModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="AboutMe" ColumnName="AboutMe" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="AvatarExt" ColumnName="AvatarExt" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Likes">
+      <EntityTypeMapping TypeName="DBWallPostByTechBrijModel.Like">
+        <MappingFragment StoreEntitySet="Likes">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="LikeBy" ColumnName="LikeBy" />
+          <ScalarProperty Name="LikeID" ColumnName="LikeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friendships">
+      <EntityTypeMapping TypeName="DBWallPostByTechBrijModel.Friendship">
+        <MappingFragment StoreEntitySet="Friendships">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

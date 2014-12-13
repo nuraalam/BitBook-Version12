@@ -1,0 +1,25 @@
+﻿@*@model IEnumerable<WallPostByTechBrij.Models.UserProfile>
+<table>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="/Home/UsersInfo?Id=@item.UserId"> <img src="@Url.Action("GetImage", "UserProfile", new {id = item.UserId})" width="40" /></a>
+            </td>
+            <td>
+                &nbsp;<a href="/Home/UsersInfo?Id=@item.UserId">@Html.DisplayFor(modelItem => item.FirstName)&nbsp; @Html.DisplayFor(modelItem => item.LastName)</a> &nbsp; &nbsp; &nbsp;
+            </td>
+
+            <td>
+                From:@Html.DisplayFor(modelItem => item.Address)&nbsp; &nbsp;
+            </td>
+            <td>
+                About Me:@Html.DisplayFor(modelItem => item.AboutMe)
+            </td>
+        </tr>
+
+    }
+
+</table>*@

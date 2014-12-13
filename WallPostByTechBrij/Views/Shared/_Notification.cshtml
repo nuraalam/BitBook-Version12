@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WallPostByTechBrij.Models.UserProfile>
+
+
+
+<button type="button" style="background-color: goldenrod; width: 240px">Wall Notification</button>
+
+
+<div class="notification" data-bind="visible: newPosts().length > 0"><a data-bind="    click: loadNewPosts"> <span data-bind="    text: newPosts().length"></span> new post(s)</a></div>
+
+<div data-bind="foreach: posts" style="width: 240px">
+
+    <a class="notification" data-bind="click:loadNewLikes,visible:NewLikes().length>0" style="width: 240px">
+        <span data-bind=" text: NewLikes().length" style="width: 240px"></span>  new like notification by
+        <span data-bind="text:notificationName"></span><br />
+    </a>
+
+    <a class="notification" data-bind="click: loadNewComments, visible: NewComments().length > 0" style="width: 240px">
+        <span data-bind="    text: NewComments().length" style="width: 240px"></span> new comment notification by
+        <span data-bind="text:notificationName"></span><br />
+    </a>
+
+
+</div>
+
+<div style="background-color:transparent; width: 240px">
+    <button type="button" style="background-color: burlywood; width: 240px">Friends Suggetion</button>
+
+    <table>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/Home/UsersInfo?Id=@item.UserId"><img src="@Url.Action("GetImage", "UserProfile", new {id = item.UserId})" width="40" /></a>
+
+                </td>
+                <td>
+                    &nbsp;<a href="/Home/UsersInfo?Id=@item.UserId">@Html.DisplayFor(modelItem => item.FirstName)&nbsp; @Html.DisplayFor(modelItem => item.LastName)</a> &nbsp; &nbsp; &nbsp;
+                </td>
+
+                <td>
+                    @Html.ActionLink("Add", "MyProfile", new { id = item.UserId })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WallPostByTechBrij.Models.UserProfile>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Search Friends @Html.TextBox("SearchString")&nbsp;
+        <button type="submit" class="btn" style="width: 100px">Search</button>
+    </p>
+}
+<h4 style="background-color: blanchedalmond; width: 860px">
+    @ViewBag.Status
+</h4>
+
+
+@*<form class="form-search">
+        <input type="text" class="input-medium search-query">
+
+    </form>*@
+<div class="float-left" style="background-color:blanchedalmond;width: 860px">
+    <table>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/Home/UsersInfo?Id=@item.UserId"> <img src="@Url.Action("GetImage", "UserProfile", new {id = item.UserId})" width="40" /></a>
+                </td>
+                <td>
+                    &nbsp;<a href="/Home/UsersInfo?Id=@item.UserId">@Html.DisplayFor(modelItem => item.FirstName)&nbsp; @Html.DisplayFor(modelItem => item.LastName)</a> &nbsp; &nbsp; &nbsp;
+                </td>
+
+                <td>
+                    From:@Html.DisplayFor(modelItem => item.Address)&nbsp; &nbsp;
+                </td>
+                <td>
+                    About Me:@Html.DisplayFor(modelItem => item.AboutMe)
+                </td>
+                <td>
+                    &nbsp; &nbsp;
+                </td>
+                <td>
+                    @Html.ActionLink("Add Friend", "SendRequest", new { id = item.UserId })
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</div>

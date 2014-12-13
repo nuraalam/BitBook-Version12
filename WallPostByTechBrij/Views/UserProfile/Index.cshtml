@@ -1,0 +1,109 @@
+﻿@model WallPostByTechBrij.Models.UserProfile
+
+@using (Html.BeginForm("FileUpload", "UserProfile", FormMethod.Post, new  { enctype = "multipart/form-data" }))
+{
+    <div class="float-left">
+        <img src="@Url.Action("GetImage", "UserProfile", new {id = Model.UserId})" width="250" />
+        <br/>
+        <label for="file">Upload or Change Image:</label>
+        <input type="file" name="file" id="file" style="width: 90%;" />
+        <input type="submit" value="Upload" class="submit" />
+    </div>
+
+}
+
+<div class="float-right" style="background-color: blanchedalmond;width: 550px">
+    <fieldset>
+        <legend>UserProfile</legend>
+
+
+
+        <div class="display-label">
+            <p> User Name: @Html.DisplayFor(model => model.UserName)</p>
+        </div>
+        <div class="display-label">
+            <p> Name:@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</p>
+        </div>
+        <div class="display-label">
+            <p>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</p>
+        </div>
+        <div class="display-label">
+            <p>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</p>
+        </div>
+        <div class="display-label">
+            <p>@Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)</p>
+        </div>
+        <div class="display-label">
+            <p>About Me: @Html.DisplayFor(model => model.AboutMe)</p>
+        </div>
+
+    </fieldset>
+    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Update Profile", "Create",new { @class = "btn btn-success" })
+</div>
+
+
+
+
+
+@*@{
+            ViewBag.Title = "Index";
+        }
+
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AvatarExt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th></th>
+            </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvatarExt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+        </table>*@

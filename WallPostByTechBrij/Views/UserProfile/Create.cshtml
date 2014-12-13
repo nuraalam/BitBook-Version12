@@ -1,0 +1,85 @@
+﻿@model WallPostByTechBrij.Models.UserProfile
+
+@{
+    ViewBag.Title = "Update Profile";
+}
+
+
+@using (Html.BeginForm("Edit","UserProfile",FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UserProfile</legend>
+
+       
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.AvatarExt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AvatarExt)
+            <input type="file" name="avatar" onchange="uploadAvatar()" />
+            @Html.ValidationMessageFor(model => model.AvatarExt)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AboutMe)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AboutMe)
+            @Html.ValidationMessageFor(model => model.AboutMe)
+        </div>
+
+        <p>
+            <input type="submit" value="Update Profile" />
+        </p>
+    </fieldset>
+}
+
+
+
+<div>
+    @Html.ActionLink("Back to your profile", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
